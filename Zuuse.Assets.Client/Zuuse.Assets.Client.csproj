@@ -3,14 +3,15 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net452</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>0.9.3-alpha</Version>
+    <Version>0.9.4-alpha</Version>
     <Authors>Adrian Akison</Authors>
     <Company>Zuuse Pty Ltd</Company>
     <Product>Zuuse Assets API Client</Product>
     <Description>A .NET Standard client API for the Zuuse Assets API, generated using Autorest.</Description>
-    <Copyright />
+    <Copyright>Copyright 2019 Zuuse Pty Ltd</Copyright>
     <PackageProjectUrl></PackageProjectUrl>
     <RepositoryUrl>https://github.com/Zuuse/assets-api-client</RepositoryUrl>
+    <PackageIconUrl>https://github.com/Zuuse/assets-api-client/icon.png</PackageIconUrl>
   </PropertyGroup>
 
   <ItemGroup>
