@@ -11,7 +11,7 @@
     <Copyright>Copyright 2019 Zuuse Pty Ltd</Copyright>
     <PackageProjectUrl></PackageProjectUrl>
     <RepositoryUrl>https://github.com/Zuuse/assets-api-client</RepositoryUrl>
-    <PackageIconUrl>https://github.com/Zuuse/assets-api-client/icon.png</PackageIconUrl>
+    <PackageIconUrl>https://github.com/Zuuse/assets-api-client/blob/master/icon.png</PackageIconUrl>
   </PropertyGroup>
 
   <ItemGroup>
