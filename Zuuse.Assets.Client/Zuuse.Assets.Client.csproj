@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net452</TargetFrameworks>
+    <TargetFrameworks>netstandard1.4;netstandard2.0;net452</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Version>0.9.5-alpha</Version>
     <Authors>Adrian Akison</Authors>
@@ -11,11 +11,13 @@
     <Copyright>Copyright 2019 Zuuse Pty Ltd</Copyright>
     <PackageProjectUrl></PackageProjectUrl>
     <RepositoryUrl>https://github.com/Zuuse/assets-api-client</RepositoryUrl>
-    <PackageIconUrl>https://github.com/Zuuse/assets-api-client/blob/master/icon.png</PackageIconUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/Zuuse/assets-api-client/master/icon.png</PackageIconUrl>
+    <SignAssembly>false</SignAssembly>
+    <DelaySign>false</DelaySign>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Rest.ClientRuntime" Version="2.3.18" />
+    <PackageReference Include="Microsoft.Rest.ClientRuntime" Version="2.3.20" />
   </ItemGroup>
 
 </Project>
