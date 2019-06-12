@@ -2,10 +2,10 @@
 A client API wrapper around the Zuuse Assets API, providing access to assets and their attributes.
 
 ## Generation
-This project is a lightweight, code-generated wrapper around the Zuuse Assets API.  It is generated using Autorest https://github.com/Azure/autorest/blob/master/docs/generating-a-client.md in PowerShell as:
+This project is a lightweight, code-generated wrapper around the Zuuse Assets API.  It is generated using Autorest https://github.com/Azure/autorest/blob/master/docs/examples/generating-a-client.md in PowerShell as:
 
 ```
-iwr https://zuuseassetsapidev.azurewebsites.net/swagger/docs/v1 -o interface.xml
+iwr https://assets.zuuse.com/swagger/docs/v1 -o interface.xml
 autorest --input-file=interface.xml --csharp --output-folder=Zuuse.Assets.Client --namespace=Zuuse.Assets.Client
 ```
 
