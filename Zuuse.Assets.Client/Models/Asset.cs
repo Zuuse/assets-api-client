@@ -6,6 +6,7 @@
 
 namespace Zuuse.Assets.Client.Models
 {
+    using Microsoft.Rest;
     using Newtonsoft.Json;
     using System.Collections;
     using System.Collections.Generic;
@@ -24,7 +25,7 @@ namespace Zuuse.Assets.Client.Models
         /// <summary>
         /// Initializes a new instance of the Asset class.
         /// </summary>
-        public Asset(string id = default(string), string name = default(string), AssetReference locationParent = default(AssetReference), AssetReference functionParent = default(AssetReference), IList<AssetReference> children = default(IList<AssetReference>), string functionalLayer0 = default(string), string functionalLayer1 = default(string), string functionalLayer2 = default(string), string functionalLayer3 = default(string), string functionalLayer4 = default(string), string functionalLayer5 = default(string), string functionalLayer6 = default(string), string functionalLayer7 = default(string), string functionalLayer8 = default(string), string functionalLayer9 = default(string), string functionalId = default(string), string locationLayer0 = default(string), string locationLayer1 = default(string), string locationLayer2 = default(string), string locationLayer3 = default(string), string locationLayer4 = default(string), string locationLayer5 = default(string), string locationLayer6 = default(string), string locationLayer7 = default(string), string locationLayer8 = default(string), string locationLayer9 = default(string), string locationId = default(string), string attribute0 = default(string), string attribute1 = default(string), string attribute2 = default(string), string attribute3 = default(string), string attribute4 = default(string), string attribute5 = default(string), string attribute6 = default(string), string attribute7 = default(string), string attribute8 = default(string), string attribute9 = default(string), double? measure0 = default(double?), double? measure1 = default(double?), double? measure2 = default(double?), double? measure3 = default(double?), double? measure4 = default(double?), double? measure5 = default(double?), double? measure6 = default(double?), double? measure7 = default(double?), double? measure8 = default(double?), double? measure9 = default(double?), bool? isPhysical = default(bool?), int? layerIndex = default(int?), string projectId = default(string), string externalId = default(string), string modelHash = default(string), string keyWords = default(string), double? latitude = default(double?), double? longitude = default(double?), bool? isActive = default(bool?), string thumbnailRemoteFile = default(string), string previewRemoteFile = default(string), string summaryReference = default(string), System.DateTime? versionDate = default(System.DateTime?), string versionBy = default(string), System.DateTime? createdDate = default(System.DateTime?), string createdBy = default(string), IList<string> geometryReferences = default(IList<string>))
+        public Asset(string name, string id = default(string), AssetReference locationParent = default(AssetReference), AssetReference functionParent = default(AssetReference), IList<AssetReference> children = default(IList<AssetReference>), string functionalLayer0 = default(string), string functionalLayer1 = default(string), string functionalLayer2 = default(string), string functionalLayer3 = default(string), string functionalLayer4 = default(string), string functionalLayer5 = default(string), string functionalLayer6 = default(string), string functionalLayer7 = default(string), string functionalLayer8 = default(string), string functionalLayer9 = default(string), string functionalId = default(string), string locationLayer0 = default(string), string locationLayer1 = default(string), string locationLayer2 = default(string), string locationLayer3 = default(string), string locationLayer4 = default(string), string locationLayer5 = default(string), string locationLayer6 = default(string), string locationLayer7 = default(string), string locationLayer8 = default(string), string locationLayer9 = default(string), string locationId = default(string), string attribute0 = default(string), string attribute1 = default(string), string attribute2 = default(string), string attribute3 = default(string), string attribute4 = default(string), string attribute5 = default(string), string attribute6 = default(string), string attribute7 = default(string), string attribute8 = default(string), string attribute9 = default(string), double? measure0 = default(double?), double? measure1 = default(double?), double? measure2 = default(double?), double? measure3 = default(double?), double? measure4 = default(double?), double? measure5 = default(double?), double? measure6 = default(double?), double? measure7 = default(double?), double? measure8 = default(double?), double? measure9 = default(double?), bool? isPhysical = default(bool?), bool? inheritedIsActive = default(bool?), int? layerIndex = default(int?), string projectId = default(string), string externalId = default(string), string modelHash = default(string), string keyWords = default(string), double? latitude = default(double?), double? longitude = default(double?), bool? isActive = default(bool?), string thumbnailRemoteFile = default(string), string previewRemoteFile = default(string), string summaryReference = default(string), System.DateTime? versionDate = default(System.DateTime?), string versionBy = default(string), System.DateTime? createdDate = default(System.DateTime?), string createdBy = default(string), IList<string> geometryReferences = default(IList<string>))
         {
             Id = id;
             Name = name;
@@ -74,6 +75,7 @@ namespace Zuuse.Assets.Client.Models
             Measure8 = measure8;
             Measure9 = measure9;
             IsPhysical = isPhysical;
+            InheritedIsActive = inheritedIsActive;
             LayerIndex = layerIndex;
             ProjectId = projectId;
             ExternalId = externalId;
@@ -340,6 +342,11 @@ namespace Zuuse.Assets.Client.Models
 
         /// <summary>
         /// </summary>
+        [JsonProperty(PropertyName = "InheritedIsActive")]
+        public bool? InheritedIsActive { get; set; }
+
+        /// <summary>
+        /// </summary>
         [JsonProperty(PropertyName = "LayerIndex")]
         public int? LayerIndex { get; set; }
 
@@ -418,5 +425,18 @@ namespace Zuuse.Assets.Client.Models
         [JsonProperty(PropertyName = "GeometryReferences")]
         public IList<string> GeometryReferences { get; set; }
 
+        /// <summary>
+        /// Validate the object.
+        /// </summary>
+        /// <exception cref="ValidationException">
+        /// Thrown if validation fails
+        /// </exception>
+        public virtual void Validate()
+        {
+            if (Name == null)
+            {
+                throw new ValidationException(ValidationRules.CannotBeNull, "Name");
+            }
+        }
     }
 }

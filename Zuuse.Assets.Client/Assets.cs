@@ -237,6 +237,10 @@ namespace Zuuse.Assets.Client
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "asset");
             }
+            if (asset != null)
+            {
+                asset.Validate();
+            }
             // Tracing
             bool _shouldTrace = ServiceClientTracing.IsEnabled;
             string _invocationId = null;
@@ -1107,6 +1111,16 @@ namespace Zuuse.Assets.Client
             if (assets == null)
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "assets");
+            }
+            if (assets != null)
+            {
+                foreach (var element in assets)
+                {
+                    if (element != null)
+                    {
+                        element.Validate();
+                    }
+                }
             }
             // Tracing
             bool _shouldTrace = ServiceClientTracing.IsEnabled;
