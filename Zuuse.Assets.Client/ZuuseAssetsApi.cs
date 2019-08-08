@@ -136,7 +136,7 @@ namespace Zuuse.Assets.Client
         {
             Assets = new Assets(this);
             Zuuse = new Zuuse(this);
-            BaseUri = new System.Uri("http://assets.zuuse.com");
+            BaseUri = new System.Uri("https://assets.zuuse.com");
             SerializationSettings = new JsonSerializerSettings
             {
                 Formatting = Newtonsoft.Json.Formatting.Indented,
