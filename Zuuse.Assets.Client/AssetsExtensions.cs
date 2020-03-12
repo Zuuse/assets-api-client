@@ -760,6 +760,46 @@ namespace Zuuse.Assets.Client
             }
 
             /// <summary>
+            /// Returns all physical children for provided VirtualAssetID
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='client'>
+            /// The name of the client account.
+            /// </param>
+            /// <param name='virtualAssetId'>
+            /// Guid of the virtualAsset you want the children of
+            /// </param>
+            public static IList<string> GetAllPhysicalChildrenAssetsOfVirtualAsset(this IAssets operations, string client, string virtualAssetId)
+            {
+                return operations.GetAllPhysicalChildrenAssetsOfVirtualAssetAsync(client, virtualAssetId).GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Returns all physical children for provided VirtualAssetID
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='client'>
+            /// The name of the client account.
+            /// </param>
+            /// <param name='virtualAssetId'>
+            /// Guid of the virtualAsset you want the children of
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task<IList<string>> GetAllPhysicalChildrenAssetsOfVirtualAssetAsync(this IAssets operations, string client, string virtualAssetId, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                using (var _result = await operations.GetAllPhysicalChildrenAssetsOfVirtualAssetWithHttpMessagesAsync(client, virtualAssetId, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
+            }
+
+            /// <summary>
             /// Get the AssetLifecycleReference for the Children of provided asset, if
             /// Guid.Empty will get the functional Roots children
             /// </summary>

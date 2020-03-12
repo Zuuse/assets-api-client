@@ -472,6 +472,31 @@ namespace Zuuse.Assets.Client
         /// </exception>
         Task<HttpOperationResponse<IList<string>>> GetAllPhysicalChildrenAssetIdsOfVirtualAssetWithHttpMessagesAsync(string client, string virtualAssetId, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
+        /// Returns all physical children for provided VirtualAssetID
+        /// </summary>
+        /// <param name='client'>
+        /// The name of the client account.
+        /// </param>
+        /// <param name='virtualAssetId'>
+        /// Guid of the virtualAsset you want the children of
+        /// </param>
+        /// <param name='customHeaders'>
+        /// The headers that will be added to request.
+        /// </param>
+        /// <param name='cancellationToken'>
+        /// The cancellation token.
+        /// </param>
+        /// <exception cref="Microsoft.Rest.HttpOperationException">
+        /// Thrown when the operation returned an invalid status code
+        /// </exception>
+        /// <exception cref="Microsoft.Rest.SerializationException">
+        /// Thrown when unable to deserialize the response
+        /// </exception>
+        /// <exception cref="Microsoft.Rest.ValidationException">
+        /// Thrown when a required parameter is null
+        /// </exception>
+        Task<HttpOperationResponse<IList<string>>> GetAllPhysicalChildrenAssetsOfVirtualAssetWithHttpMessagesAsync(string client, string virtualAssetId, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
         /// Get the AssetLifecycleReference for the Children of provided asset,
         /// if Guid.Empty will get the functional Roots children
         /// </summary>
